@@ -1,0 +1,27 @@
+Outcomes	Reasons
+
+1,2 		thread T_1("x") or thread T_1("y") will start and the value of x in run will increase but as x is static they are sharing 
+		the same reference so the x++ doesn´t get executed for the second thread and main takes control until the end.
+
+1,3 		thread T_1("x") or thread T_1("y") will start and the value of x in method run will increase and the x++ will be executed 
+		for the second thread. Also this value can be fixed/predicted if we use join which will ensure that the thread that is been 
+		called to join executes the job before main takes control.
+
+2,3 		thread T_1("x") or thread T_1("y") executes run until the middle of print statement and the value of the first thread is 1 
+		and the second executes last x++ and then first thread execute print statement then second thread executes first x++ and then the prrint statement.
+
+2,2 		thread T_1("x") or thread T_1("y") executes first x++ in run then the other thread executes the same x++, x is 2 and each 
+		thread executes the print statement and main takes control.
+
+1,1 		thread T_1("x") or thread T_1("y") executes first x++ and then prints the statement the other thread prints the statment and main takes control.
+
+3,3 		thread T_1("x") or thread T_1("y") executes first x++ then it stop at middle of print, the second executes the last x++ and 
+ 		the first then the first thread prints and the second thread also prints and main takes control.
+
+4,4 		thread T_1("x") or thread T_1("y") executes first x++ then the the other thread executes part of the print and the first thread 
+		executes the last x++ and also the second thread and finally both execute the print stament completely
+
+ 
+
+
+
